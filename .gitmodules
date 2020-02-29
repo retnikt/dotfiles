@@ -1,3 +1,4 @@
 [submodule "zsh"]
 	path = zsh
 	url = https://github.com/ohmyzsh/ohmyzsh.git
+	branch = master
