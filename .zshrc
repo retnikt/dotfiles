@@ -1,6 +1,3 @@
-# start based on bashrc
-source .bashrc
-
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=10000
@@ -17,3 +14,5 @@ compinit
 # End of lines added by compinstall
 
 [ -f .zsh_aliases ] && . ~/.zsh_aliases
+
+export PROMPT="%F{10}%n%f%F{15}@%f%F{13}%m%f:%F{12}%~%f$ "
