@@ -1,4 +1,5 @@
 export LESS="-~ --mouse"
+00=$0
 
 asthma() {
 	pushd ~/Music/asthma &> /dev/null
@@ -34,7 +35,10 @@ run() {
 }
 
 secret() {
+	export prevclip=$(xclip -out -sel c)
 	xclip -sel c <(tr -d '\n' < "$HOME/secrets/.$1.passwd")
+	run $00 'sleep 6; xclip -sel c <<< $prevclip; unset prevclip'
+	unset prevclip
 }
 
 which code-oss &>/dev/null && alias code=code-oss
