@@ -28,7 +28,7 @@ _bash_man() {
 [[ -n ZSH_VERSION ]] && alias help=run-help
 
 secret() {
-	xclip -sel c <(head -n1 < "$HOME/secrets/.$1.passwd")
+	xclip -sel c <(tr -d '\n' < "$HOME/secrets/.$1.passwd")
 }
 
 which code-oss &>/dev/null && alias code=code-oss
