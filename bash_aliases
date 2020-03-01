@@ -1,3 +1,5 @@
+export LESS="-~ --mouse"
+
 asthma() {
 	pushd ~/Music/asthma &> /dev/null
 	youtube-dl --id --download-archive asthma.txt -f bestaudio $1 &> /dev/null
@@ -26,6 +28,10 @@ _bash_man() {
 [[ -n BASH_VERSION ]] && alias man=_bash_man
 
 [[ -n ZSH_VERSION ]] && alias help=run-help
+
+run() {
+	$@ &>/dev/null & disown
+}
 
 secret() {
 	xclip -sel c <(tr -d '\n' < "$HOME/secrets/.$1.passwd")
