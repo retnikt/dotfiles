@@ -1,6 +1,6 @@
 [user]
 	name = retnikt
 	email = _@retnikt.uk
-	signingkey = D21C3EB4B7B70CDC702CB5BC7BFB5873AF51538F
+	signingkey = FFB6E30C1F304B7B933B2DEFA7672CC84EBD9D18
 [commit]
 	gpgsign = true

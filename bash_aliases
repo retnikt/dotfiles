@@ -5,23 +5,34 @@ asthma() {
 }
 
 curl() {
-	$(which curl) $@
+	command curl $@
 	echo
 }
 
 pye() {
-	$(which python) -c "print(repr($1))" $@
+	x=$1
+	shift
+	command python -c "print(repr($x))" $@
 }
 
-help() {
-	(builtin help -m $@ 2>/dev/null || $@ --help) | less
+_bash_help() {
+	(builtin help -m $@ 2>/dev/null || $@ --help || return) | less
 }
 
-man() {
-	command man $@ || (help -m $@ | less)
+_bash_man() {
+	command man $@ 2>/dev/null || (help -m $@ | less)
 }
 
-alias code=code-insiders
+[[ -n BASH_VERSION ]] && alias man=_bash_man
+
+[[ -n ZSH_VERSION ]] && alias help=run-help
+
+secret() {
+	xclip -sel c <(head -n1 < "$HOME/secrets/.$1.passwd")
+}
+
+which code-oss &>/dev/null && alias code=code-oss
+which code-insiders &>/dev/null && alias code=code-insiders
 
 alias pgp=gpg
 
