@@ -8,7 +8,7 @@ export ZSH="$HOME/projects/dotfiles/zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="michelebologna"
+ZSH_THEME="retnikt"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -61,7 +61,7 @@ ZSH_THEME="michelebologna"
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-ZSH_CUSTOM=projects/dotfiles/zsh_custom
+ZSH_CUSTOM=$HOME/projects/dotfiles/zsh_custom
 
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
