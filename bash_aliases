@@ -35,10 +35,14 @@ run() {
 }
 
 secret() {
+	echo saving
 	export prevclip=$(xclip -out -sel c)
+	echo copying
 	xclip -sel c <(tr -d '\n' < "$HOME/secrets/.$1.passwd")
+	echo running
 	run $00 'sleep 6; xclip -sel c <<< $prevclip; unset prevclip'
 	unset prevclip
+	echo done
 }
 
 which code-oss &>/dev/null && alias code=code-oss
