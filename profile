@@ -22,6 +22,9 @@ export WGETRC="$XDG_CONFIG_HOME"/wgetrc
 export PYTHONSTARTUP="$XDG_CONFIG_HOME"/python/startup.py
 export PYTHON_EGG_CACHE="$XDG_CACHE_HOME"/python-eggs
 
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npmrc"
+export NVM_DIR="$XDG_DATA_HOME"/nvm
+
 unset SSH_ASKPASS
 # test $DISPLAY && export SSH_ASKPASS="/usr/bin/ksshaskpass" || unset SSH_ASKPASS
 
